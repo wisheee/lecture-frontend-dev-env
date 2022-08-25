@@ -3,7 +3,8 @@ import View from "./View.js";
 export default class FormView extends View {
   constructor(el) {
     super(el);
-    this._inputEl = el.querySelector("[type=text]") || el.querySelector("[type]");
+    this._inputEl =
+      el.querySelector("[type=text]") || el.querySelector("[type]");
     this._resetEl = el.querySelector("[type=reset]");
     this.showResetBtn(false);
     this.bindEvents();
@@ -15,8 +16,8 @@ export default class FormView extends View {
   }
 
   bindEvents() {
-    this.on("submit", e => e.preventDefault());
-    this._inputEl.addEventListener("keyup", e => this.onKeyup(e));
+    this.on("submit", (e) => e.preventDefault());
+    this._inputEl.addEventListener("keyup", (e) => this.onKeyup(e));
     this._resetEl.addEventListener("click", () => this.onClickReset());
   }
 
